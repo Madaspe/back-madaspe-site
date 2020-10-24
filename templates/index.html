@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        async function SavePhoto(inp) {
+            let formData = new FormData();
+            let photo = inp.files[0];
+
+            formData.append("photo", photo);
+
+            try {
+                let r = await fetch('/', {method: "POST", body: formData});
+            } catch (e) {
+
+            }
+
+        }
+    </script>
 </head>
 <body>
+<center>
+    <input style="margin-top:20%;" id="image-file" type="file" onchange="SavePhoto(this)">
 
+
+</center>
 </body>
 </html>
